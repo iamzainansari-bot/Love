@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chocolates For Muqaddas Cutieee 🍫</title>
+
+<style>
+
+body{
+margin:0;
+background:black;
+color:white;
+text-align:center;
+font-family:Arial;
+overflow:hidden;
+}
+
+/* chocolate image */
+
+.choco{
+width:250px;
+margin-top:100px;
+animation:float 3s infinite alternate ease-in-out;
+filter:drop-shadow(0 0 20px #ff0066);
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-40px);}
+}
+
+/* floating chocolates animation */
+
+.floatChoco{
+position:absolute;
+width:60px;
+animation:rise linear infinite;
+}
+
+@keyframes rise{
+from{transform:translateY(110vh);}
+to{transform:translateY(-10vh);}
+}
+
+/* button */
+
+.btn{
+margin-top:40px;
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:#ff0066;
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px #ff0066;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Sweet Chocolates For Sweet Bestie 🍫</h1>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chocolate_%28blue_background%29.jpg/512px-Chocolate_%28blue_background%29.jpg"
+class="choco">
+
+<br>
+
+<button class="btn" onclick="nextPage()">Next 🌹</button>
+
+<script>
+
+/* floating chocolates */
+
+setInterval(()=>{
+
+let img=document.createElement("img");
+
+img.src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chocolate_%28blue_background%29.jpg/128px-Chocolate_%28blue_background%29.jpg";
+
+img.className="floatChoco";
+
+img.style.left=Math.random()*100+"vw";
+
+img.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(img);
+
+setTimeout(()=>img.remove(),10000);
+
+},700);
+
+function nextPage(){
+
+window.location="page4.html";
+
+}
+
+</script>
+
+</body>
+</html>
