@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Muqaddas Javed ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+background:black;
+font-family:Poppins;
+text-align:center;
+color:white;
+}
+
+/* Background */
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:url("https://images.unsplash.com/photo-1518199266791-5375a83190b7") center/cover;
+filter:brightness(0.4);
+z-index:-1;
+}
+
+/* Title */
+
+.title{
+margin-top:10%;
+font-size:70px;
+font-family:Pacifico;
+color:#ff99cc;
+text-shadow:0 0 30px #ff0066;
+}
+
+/* typing */
+
+.typing{
+font-size:30px;
+margin-top:20px;
+}
+
+/* button */
+
+.btn{
+margin-top:30px;
+padding:18px 40px;
+font-size:22px;
+border:none;
+border-radius:40px;
+background:#ff0066;
+color:white;
+cursor:pointer;
+box-shadow:0 0 30px #ff0066;
+}
+
+/* floating image */
+
+.float{
+position:absolute;
+animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+from{transform:translateY(110vh);}
+to{transform:translateY(-10vh);}
+}
+
+/* teddy walking */
+
+.teddy{
+position:absolute;
+bottom:0;
+width:120px;
+animation:walk 12s linear infinite;
+}
+
+@keyframes walk{
+0%{left:-150px;}
+100%{left:110%;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- MUSIC -->
+<audio autoplay loop controls style="position:absolute;top:10px;left:10px;">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3">
+</audio>
+
+<h1 class="title">Muqaddas Javed ❤️</h1>
+
+<div class="typing" id="typing"></div>
+
+<button class="btn" onclick="next()">Open Your Surprise 🎁</button>
+
+<!-- TEDDY IMAGE -->
+<img src="https://i.imgur.com/4AiXzf8.png" class="teddy">
+
+<script>
+
+/* typing */
+
+var text="Happy Valentine's Day Bestie 🌹 From Zain Ul Abideen 💌";
+var i=0;
+
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,60);
+}
+}
+type();
+
+/* floating chocolates */
+
+setInterval(()=>{
+let img=document.createElement("img");
+img.src="https://i.imgur.com/6RLkx.png";
+img.className="float";
+img.style.left=Math.random()*100+"vw";
+img.style.width="60px";
+img.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(img);
+setTimeout(()=>img.remove(),10000);
+},800);
+
+/* floating roses */
+
+setInterval(()=>{
+let img=document.createElement("img");
+img.src="https://i.imgur.com/Qp9YQ.png";
+img.className="float";
+img.style.left=Math.random()*100+"vw";
+img.style.width="50px";
+img.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(img);
+setTimeout(()=>img.remove(),10000);
+},600);
+
+function next(){
+window.location="page2.html";
+}
+
+</script>
+
+</body>
+</html>
